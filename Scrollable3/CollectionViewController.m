@@ -64,7 +64,11 @@ static NSString * const reuseIdentifier = @"Cell";
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     //cell.imageView.image = [UIImage imageNamed:tvChannels[indexPath.row]];
   cell.channelName.text = [NSString stringWithFormat:@"(%d, %d)", indexPath.section, indexPath.row];
-  cell.channelName.layer.borderColor = [UIColor blueColor].CGColor;
+  [cell.channelName setTextAlignment:NSTextAlignmentCenter];
+  cell.layer.backgroundColor = [UIColor whiteColor].CGColor;
+  cell.channelName.layer.borderWidth = 1.0f;
+  cell.channelName.layer.borderColor = [UIColor blackColor].CGColor;
+  [cell.channelName.layer setCornerRadius:10.0f];
     // Configure the cell
     
     return cell;

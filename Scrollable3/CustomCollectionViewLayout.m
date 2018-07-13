@@ -30,6 +30,7 @@ Boolean dataSourceDidUpdate = true;
         for(int item = 0; item<[self.collectionView numberOfItemsInSection:0]; item++){
           NSIndexPath *cellIndex = [NSIndexPath indexPathForItem:item inSection:0];
           UICollectionViewLayoutAttributes *attr = [cellAttributesDict objectForKey:[NSIndexPath indexPathForItem:item inSection:0]];
+          attr.zIndex = 1;
           CGFloat xPos = attr.frame.origin.x;
           CGFloat yPos = yOffSet;
           
@@ -47,9 +48,9 @@ Boolean dataSourceDidUpdate = true;
         for (int section = 1; section<self.collectionView.numberOfSections; section++){
           NSIndexPath *cellIndex = [NSIndexPath indexPathForItem:0 inSection:section];
           CGFloat xPos = xOffSet;
-          
           UICollectionViewLayoutAttributes *attr = [cellAttributesDict objectForKey:[NSIndexPath indexPathForItem:0 inSection:section]];
           CGFloat yPos = attr.frame.origin.y;
+          attr.zIndex = 1;
            NSLog(@"There is something %@", attr);
           attr.frame = CGRectMake(xPos, yPos, CELL_WIDTH, CELL_HEIGHT);
           
