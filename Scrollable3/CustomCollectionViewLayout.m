@@ -19,6 +19,7 @@ Boolean dataSourceDidUpdate = true;
 }
 - (void)prepareLayout{
   if(!dataSourceDidUpdate){
+    NSLog(@"updating again %d", 1);
     CGFloat yOffSet = self.collectionView.contentOffset.y;
     CGFloat xOffSet = self.collectionView.contentOffset.x;
     if(self.collectionView.numberOfSections>0){
@@ -28,23 +29,27 @@ Boolean dataSourceDidUpdate = true;
         //for horizontal header
         for(int item = 0; item<[self.collectionView numberOfItemsInSection:0]; item++){
           NSIndexPath *cellIndex = [NSIndexPath indexPathForItem:item inSection:0];
-          
           UICollectionViewLayoutAttributes *attr = [cellAttributesDict objectForKey:[NSIndexPath indexPathForItem:item inSection:0]];
+          CGFloat xPos = attr.frame.origin.x;
+          CGFloat yPos = yOffSet;
+          
+          if(item == 0){
+            xPos = xOffSet;
+          }
           //attr.frame.origin.x = xOffSet + item*CELL_WIDTH;
           NSLog(@"There is something %@", attr);
-          attr.frame = CGRectMake(attr.frame.origin.x-CELL_WIDTH/2.0, yOffSet, CELL_WIDTH, CELL_HEIGHT);
-          //attr.frame.origin.y = yOffSet;
+          attr.frame = CGRectMake(xPos, yPos, CELL_WIDTH, CELL_HEIGHT);
           
           [cellAttributesDict setValue:attr forKey:cellIndex];
         }
         
         //for vertical header
-        for (int section = 0; section<self.collectionView.numberOfSections; section++){
+        for (int section = 1; section<self.collectionView.numberOfSections; section++){
           NSIndexPath *cellIndex = [NSIndexPath indexPathForItem:0 inSection:section];
           CGFloat xPos = xOffSet;
           
           UICollectionViewLayoutAttributes *attr = [cellAttributesDict objectForKey:[NSIndexPath indexPathForItem:0 inSection:section]];
-          CGFloat yPos = attr.frame.origin.y-CELL_HEIGHT/2.0;
+          CGFloat yPos = attr.frame.origin.y;
            NSLog(@"There is something %@", attr);
           attr.frame = CGRectMake(xPos, yPos, CELL_WIDTH, CELL_HEIGHT);
           
@@ -71,8 +76,7 @@ Boolean dataSourceDidUpdate = true;
             attr.frame = CGRectMake(xPos, yPos, CELL_WIDTH, CELL_HEIGHT);
             
             [cellAttributesDict setValue:attr forKey:cellIndex];
-            //NSLog(@"I can find it again %@", [cellAttributesDict objectForKey:[NSIndexPath indexPathForItem:item inSection:section]]);
-            //NSLog(@"The cell index (%d, %d) and the corresponding attr: %@", section, item, attr);
+            
           }
         }
         
