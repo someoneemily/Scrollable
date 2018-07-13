@@ -9,7 +9,7 @@
 #import "CustomCollectionViewLayout.h"
 
 @implementation CustomCollectionViewLayout
-CGFloat CELL_HEIGHT = 30.0;
+CGFloat CELL_HEIGHT = 50.0;
 CGFloat CELL_WIDTH = 100.0;
 NSMutableDictionary *cellAttributesDict;
 CGSize contentSize;
@@ -72,9 +72,15 @@ Boolean dataSourceDidUpdate = true;
             NSIndexPath *cellIndex = [NSIndexPath indexPathForItem:item inSection:section];
             CGFloat xPos = item*CELL_WIDTH;
             CGFloat yPos = section*CELL_HEIGHT;
-            
             UICollectionViewLayoutAttributes *attr = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:cellIndex];
-            attr.frame = CGRectMake(xPos, yPos, CELL_WIDTH, CELL_HEIGHT);
+            
+            if(section%2==0 && item != 0 && section !=0 ){
+              xPos = item*CELL_WIDTH*2-CELL_WIDTH;
+              attr.frame = CGRectMake(xPos, yPos, CELL_WIDTH*2, CELL_HEIGHT);
+            }else{
+              attr.frame = CGRectMake(xPos, yPos, CELL_WIDTH, CELL_HEIGHT);
+            }
+            
             
             [cellAttributesDict setValue:attr forKey:cellIndex];
             
