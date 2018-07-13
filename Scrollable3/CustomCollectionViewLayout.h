@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CustomCollectionViewLayout.h
 //  Scrollable3
 //
 //  Created by Emily Chen on 7/11/18.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface CustomCollectionViewLayout : UICollectionViewLayout
 
 @end
-

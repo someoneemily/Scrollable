@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		98C49D8F20F6846F0054F01F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C49D8E20F6846F0054F01F /* AppDelegate.m */; };
-		98C49D9220F6846F0054F01F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C49D9120F6846F0054F01F /* ViewController.m */; };
 		98C49D9520F6846F0054F01F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98C49D9320F6846F0054F01F /* Main.storyboard */; };
 		98C49D9720F684700054F01F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98C49D9620F684700054F01F /* Assets.xcassets */; };
 		98C49D9A20F684700054F01F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98C49D9820F684700054F01F /* LaunchScreen.storyboard */; };
 		98C49D9D20F684700054F01F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C49D9C20F684700054F01F /* main.m */; };
 		98C49DA720F684700054F01F /* Scrollable3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C49DA620F684700054F01F /* Scrollable3Tests.m */; };
 		98C49DB220F684700054F01F /* Scrollable3UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C49DB120F684700054F01F /* Scrollable3UITests.m */; };
+		98C49DC420F6855B0054F01F /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C49DC320F6855B0054F01F /* CollectionViewController.m */; };
+		98C49DC720F686E40054F01F /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C49DC620F686E40054F01F /* CollectionViewCell.m */; };
+		98C49DCA20F6A76A0054F01F /* CustomCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C49DC920F6A76A0054F01F /* CustomCollectionViewLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +40,6 @@
 		98C49D8A20F6846F0054F01F /* Scrollable3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrollable3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C49D8D20F6846F0054F01F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		98C49D8E20F6846F0054F01F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		98C49D9020F6846F0054F01F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		98C49D9120F6846F0054F01F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		98C49D9420F6846F0054F01F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		98C49D9620F684700054F01F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98C49D9920F684700054F01F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +51,12 @@
 		98C49DAD20F684700054F01F /* Scrollable3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Scrollable3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C49DB120F684700054F01F /* Scrollable3UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Scrollable3UITests.m; sourceTree = "<group>"; };
 		98C49DB320F684700054F01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98C49DC220F6855B0054F01F /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		98C49DC320F6855B0054F01F /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		98C49DC520F686E40054F01F /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		98C49DC620F686E40054F01F /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		98C49DC820F6A76A0054F01F /* CustomCollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewLayout.h; sourceTree = "<group>"; };
+		98C49DC920F6A76A0054F01F /* CustomCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +107,15 @@
 		98C49D8C20F6846F0054F01F /* Scrollable3 */ = {
 			isa = PBXGroup;
 			children = (
+				98C49DC220F6855B0054F01F /* CollectionViewController.h */,
+				98C49DC320F6855B0054F01F /* CollectionViewController.m */,
+				98C49DC820F6A76A0054F01F /* CustomCollectionViewLayout.h */,
+				98C49DC920F6A76A0054F01F /* CustomCollectionViewLayout.m */,
 				98C49D8D20F6846F0054F01F /* AppDelegate.h */,
 				98C49D8E20F6846F0054F01F /* AppDelegate.m */,
-				98C49D9020F6846F0054F01F /* ViewController.h */,
-				98C49D9120F6846F0054F01F /* ViewController.m */,
 				98C49D9320F6846F0054F01F /* Main.storyboard */,
+				98C49DC520F686E40054F01F /* CollectionViewCell.h */,
+				98C49DC620F686E40054F01F /* CollectionViewCell.m */,
 				98C49D9620F684700054F01F /* Assets.xcassets */,
 				98C49D9820F684700054F01F /* LaunchScreen.storyboard */,
 				98C49D9B20F684700054F01F /* Info.plist */,
@@ -262,9 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98C49D9220F6846F0054F01F /* ViewController.m in Sources */,
 				98C49D9D20F684700054F01F /* main.m in Sources */,
 				98C49D8F20F6846F0054F01F /* AppDelegate.m in Sources */,
+				98C49DCA20F6A76A0054F01F /* CustomCollectionViewLayout.m in Sources */,
+				98C49DC720F686E40054F01F /* CollectionViewCell.m in Sources */,
+				98C49DC420F6855B0054F01F /* CollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
