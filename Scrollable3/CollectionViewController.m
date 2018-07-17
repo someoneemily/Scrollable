@@ -29,6 +29,7 @@ static NSString * const reuseIdentifier = @"Cell";
     // Register cell classes
 //    [self.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
   self.collectionView.collectionViewLayout = [[CustomCollectionViewLayout alloc] init];
+  self.collectionView.directionalLockEnabled = true;
     // Do any additional setup after loading the view.
 }
 
